@@ -27,7 +27,8 @@ theme:
 
 nav:
   - Home: index.md
-  - About: about.md
+  - Manuals and Conventions: 
+    - Flow: manuals/flow.md
   - Subjects:
     - Programming Methodologies:
       - Overview: subjects/programming-methodologies/index.md
@@ -43,17 +44,30 @@ nav:
         - Module 1: subjects/embedded-systems/modules/module-1.md
         - Module 2: subjects/embedded-systems/modules/module-2.md
         - Module 2: subjects/embedded-systems/modules/module-3.md
+  - About: about.md
+
 
 markdown_extensions:
-- admonition
-- attr_list
-- def_list
-- footnotes
-- pymdownx.details
-- pymdownx.highlight
-- pymdownx.superfences
-- pymdownx.tasklist
+  - toc:
+      permalink: true
+  - admonition
+  - footnotes
+  - codehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.tabbed
 
 
 plugins:
-- search
+  - search
+  - mermaid2
+  - swagger-ui-tag
+  - glightbox
+
+extra:
+  homepage: https://docs.upv-mechatronics.dev/
