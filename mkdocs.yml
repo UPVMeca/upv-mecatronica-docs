@@ -1,0 +1,59 @@
+site_name: Mechatronics Documentation
+site_description: Centralized documentation for all courses
+site_url: https://github.com/UPVMeca
+repo_url: https://github.com/UPVMeca/upv-mecatronica-docs
+repo_name: UPVMeca/upv-mecatronica-docs
+
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: default
+      toggle:
+      icon: material/weather-night
+      name: Dark mode
+    - scheme: slate
+      toggle:
+      icon: material/weather-sunny
+      name: Light mode
+
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Subjects:
+    - Programming Methodologies:
+      - Overview: subjects/programming-methodologies/index.md
+      - Syllabus: subjects/programming-methodologies/syllabus.md
+      - Modules:
+        - Module 1 — Algorithms, Flowcharts, Pseudocode & DFAs: subjects/programming-methodologies/modules/module-1.md
+        - Module 2 — Program Elements & Structures: subjects/programming-methodologies/modules/module-2.md
+        - Module 3 — Programming Language: subjects/programming-methodologies/modules/module-3.md
+    - Embedded Systems:
+      - Overview: subjects/embedded-systems/index.md
+      - Syllabus: subjects/embedded-systems/syllabus.md
+      - Modules:
+        - Module 1: subjects/embedded-systems/modules/module-1.md
+        - Module 2: subjects/embedded-systems/modules/module-2.md
+        - Module 2: subjects/embedded-systems/modules/module-3.md
+
+markdown_extensions:
+- admonition
+- attr_list
+- def_list
+- footnotes
+- pymdownx.details
+- pymdownx.highlight
+- pymdownx.superfences
+- pymdownx.tasklist
+
+
+plugins:
+- search
