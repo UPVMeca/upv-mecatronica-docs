@@ -8,27 +8,50 @@ repo_name: UPVMeca/upv-mecatronica-docs
 theme:
   name: material
   language: en
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Inter   
+    code: JetBrains Mono
+  palette:
+    - scheme: default   
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate             
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
   features:
+    # Navegación
     - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.footer
+    # Búsqueda
+    - search.suggest
+    - search.highlight
+    # Contenido
+    - toc.integrate
     - content.code.copy
+    - content.code.select
+    - content.code.annotate
     - content.action.edit
-  palette:
-    - scheme: default
-      toggle:
-      icon: material/weather-night
-      name: Dark mode
-    - scheme: slate
-      toggle:
-      icon: material/weather-sunny
-      name: Light mode
-
+    - content.tabs.link
 
 nav:
   - Home: index.md
   - Manuals and Conventions: 
-    - Flow: manuals/flow.md
+    - Connect to GitHub: manuals/ssh-github.md
+    - WorkFlow: manuals/flow.md
   - Subjects:
     - Programming Methodologies:
       - Overview: subjects/programming-methodologies/index.md
@@ -48,26 +71,57 @@ nav:
 
 
 markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
   - toc:
       permalink: true
-  - admonition
-  - footnotes
-  - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid_custom
-  - pymdownx.highlight
   - pymdownx.details
-  - pymdownx.tabbed
-
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.caret
+  - pymdownx.mark
 
 plugins:
   - search
   - mermaid2
   - swagger-ui-tag
   - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
+      type: date
+      timezone: America/Monterrey
 
 extra:
-  homepage: https://docs.upv-mechatronics.dev/
+  homepage: https://docs.upv-mechatronics.dev
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/UPVMeca
+      name: GitHub • UPVMeca
+    - icon: material/school
+      link: https://www.upv.edu.mx/
+      name: Universidad Politécnica de Victoria
+  consent:            # opcional: banner de consentimiento sencillo (Analytics)
+    title: Cookies & Privacy
+    description: We use cookies only to analyze traffic and improve documentation.
+
+extra_css:
+  - assets/styles/overrides.css   # crea este archivo si quieres retoques finos (opcional)
+

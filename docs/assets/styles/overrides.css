@@ -1,0 +1,8 @@
+/* Ancho cómodo de lectura */
+.md-grid { max-width: 1200px; }
+
+/* Realza admonitions */
+.md-typeset .admonition { border-radius: 10px; }
+
+/* Imagenes con esquinas suaves */
+.md-typeset img { border-radius: 8px; }
