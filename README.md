@@ -114,3 +114,6 @@ python -m mkdocs build
 ## 7) License
 
 Add your preferred license (e.g., MIT) at the repo root: `LICENSE`.
+=======
+# Upv-mecatronica-docs
+Official documentation for Mechatronics
