@@ -1,8 +1,26 @@
-/* Ancho cómodo de lectura */
-.md-grid { max-width: 1200px; }
+/* 1) Usar todo el ancho de la pantalla (quita el contenedor centrado) */
+.md-grid {
+  max-width: 100%;
+}
 
-/* Realza admonitions */
-.md-typeset .admonition { border-radius: 10px; }
+/* 2) Reducir la separación entre menú lateral y contenido */
+.md-main__inner {
+  column-gap: 1rem;   /* por defecto es mayor; prueba 0.75rem o 0.5rem si quieres aún menos */
+}
 
-/* Imagenes con esquinas suaves */
-.md-typeset img { border-radius: 8px; }
+/* 3) En pantallas grandes, asegúrate que la sidebar quede bien pegada a la izquierda */
+@media (min-width: 76.25em) {
+  .md-sidebar--primary {
+    margin-left: 0;
+    left: 0;
+  }
+}
+
+/* (Opcional) 4) Ajustar el ancho de la sidebar si la sientes muy ancha o muy angosta */
+:root {
+  /* valores típicos: 15rem–20rem */
+  --md-sidebar-width: 17rem;
+}
+.md-sidebar--primary {
+  width: var(--md-sidebar-width);
+}
