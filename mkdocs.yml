@@ -115,6 +115,14 @@ plugins:
   - mermaid2
   - swagger-ui-tag
   - glightbox
+  - i18n:
+      default_language: en
+      languages:
+        - locale: en
+          name: English
+          default: true
+        - locale: es
+          name: Español
   - git-revision-date-localized:
       enable_creation_date: false
       fallback_to_build_date: true
