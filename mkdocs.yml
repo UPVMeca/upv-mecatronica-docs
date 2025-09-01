@@ -66,9 +66,15 @@ nav:
       - Modules:
         - Module 1: subjects/embedded-systems/modules/module-1.md
         - Module 2: subjects/embedded-systems/modules/module-2.md
-        - Module 2: subjects/embedded-systems/modules/module-3.md
+        - Module 3: subjects/embedded-systems/modules/module-3.md
+    - Robot Kinematics and Dynamics :
+      - Overview: subjects/robot-kinematics-and-dynamics/index.md
+      - Syllabus: subjects/robot-kinematics-and-dynamics/syllabus.md
+      - Modules:
+        - Module 1: subjects/robot-kinematics-and-dynamics/modules/module-1.md
+        - Module 2: subjects/robot-kinematics-and-dynamics/modules/module-2.md
+        - Module 3: subjects/robot-kinematics-and-dynamics/modules/module-3.md
   - About: about.md
-
 
 markdown_extensions:
   - admonition
@@ -87,6 +93,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.arithmatex:
+      generic: true  
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
@@ -98,11 +106,23 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
 
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+
 plugins:
   - search
   - mermaid2
   - swagger-ui-tag
   - glightbox
+  - i18n:
+      default_language: en
+      languages:
+        - locale: en
+          name: English
+          default: true
+        - locale: es
+          name: Español
   - git-revision-date-localized:
       enable_creation_date: false
       fallback_to_build_date: true
