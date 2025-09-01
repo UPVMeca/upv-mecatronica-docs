@@ -29,7 +29,7 @@ theme:
 
   features:
     # Navegación
-    - navigation.instant
+    # - navigation.instant
     - navigation.tracking
     - navigation.tabs
     - navigation.sections
