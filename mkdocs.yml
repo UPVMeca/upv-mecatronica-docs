@@ -116,7 +116,6 @@ plugins:
   - swagger-ui-tag
   - glightbox
   - i18n:
-      default_language: en
       languages:
         - locale: en
           name: English
